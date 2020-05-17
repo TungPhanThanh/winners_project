@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vshopping/Prefs/preference.dart';
 import 'package:vshopping/login.dart';
 import 'package:vshopping/screen/splash.dart';
@@ -12,6 +13,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.red,
@@ -20,27 +24,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: Login(),
     );
   }
 }
-//
-//StreamBuilder(
-//builder: (context, snapshot) {
-//String stringValue;
-//Prefs.id.then((value) => {
-//stringValue = value,
-//print("ID at start: " + stringValue),
-//if (stringValue.length > 0) {
-//snapshot.hasData == true,
-//}else{
-//snapshot.hasData == false,
-//}
-//});
-//if (snapshot.hasData) {
-//return VShopping();
-//} else {
-//return Login();
-//}
-//},
-//),

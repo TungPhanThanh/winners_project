@@ -11,7 +11,7 @@
     <application
         android:name="io.flutter.app.FlutterApplication"
         android:label="VShopping"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_app"
         android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
